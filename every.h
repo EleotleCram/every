@@ -40,7 +40,7 @@
 #define WEEK         1 WEEKS
 // clang-format on
 
-#define EVERY_TIME(N, TIME_FN)                                                 \
-  for (static uint32_t _lasttime;                                              \
-       (uint32_t)((uint32_t)TIME_FN() - _lasttime) >= (N); _lasttime += (N))
+#define EVERY_TIME(N, TIME_FN)                                                                         \
+  for (static uint32_t _lasttime = TIME_FN() + (N);                                                    \
+       (uint32_t)((uint32_t)TIME_FN() - _lasttime) >= (N); _lasttime = ((uint32_t)TIME_FN()))
 #define EVERY(...) EVERY_TIME(__VA_ARGS__)
