@@ -24,19 +24,21 @@
 
 #include <stdint.h>
 
+// clang-format off
 #define MICROSECONDS * 1, micros
 #define MILLISECONDS * 1, millis
-#define MILLISECOND 1 MILLISECONDS
-#define SECONDS * 1000 MILLISECONDS
-#define SECOND 1 SECONDS
-#define MINUTES * 60 SECONDS
-#define MINUTE 1 MINUTES
-#define HOURS * 60 MINUTES
-#define HOUR 1 HOURS
-#define DAYS * 24 HOURS
-#define DAY 1 DAYS
-#define WEEKS * 7 DAYS
-#define WEEK 1 WEEKS
+#define MILLISECOND  1 MILLISECONDS
+#define SECONDS      * 1000 MILLISECONDS
+#define SECOND       1 SECONDS
+#define MINUTES      * 60 SECONDS
+#define MINUTE       1 MINUTES
+#define HOURS        * 60 MINUTES
+#define HOUR         1 HOURS
+#define DAYS         * 24 HOURS
+#define DAY          1 DAYS
+#define WEEKS        * 7 DAYS
+#define WEEK         1 WEEKS
+// clang-format on
 
 #define EVERY_TIME(N, TIME_FN)                                                 \
   for (static uint32_t _lasttime;                                              \
